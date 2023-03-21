@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { CookiesProvider } from 'react-cookie';
+import App from './components/App';
 import './styles/index.css';
-import SignUp from './components/SignUp';
-import LogIn from './components/LogIn';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LogIn />
-  </React.StrictMode>
+    <CookiesProvider>
+      <App />
+    </CookiesProvider>
+  </React.StrictMode>,
 );

@@ -1,5 +1,8 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
+
+import { setAuthToken } from '../methods/setAuthToken';
 import '../styles/LogIn.css';
 
 const LogIn = () => {
@@ -9,10 +12,9 @@ const LogIn = () => {
 
   const [cookies, setCookie] = useCookies(['jwt_token']);
 
-  const saveJWTinCookie = (token, expires) => {
-    const bearerToken = `Bearer ${token}`;
-    setCookie('jwt_token', bearerToken, {
-      maxAge: 60*24*60*60*1000,
+  const saveJWTinCookie = (token) => {
+    setCookie('jwt_token', token, {
+      maxAge: 60 * 24 * 60 * 60 * 1000,
       path: '/',
     });
   };
@@ -20,21 +22,26 @@ const LogIn = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     /// implement dotenv api url !!!
-    fetch('http://localhost:3000/user/log-in', {
-      method: 'POST',
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        if (json.error) {
-          setErrors(json.error);
+    axios
+      .post(
+        'http://localhost:3000/user/log-in',
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+      .then((res) => {
+        if (res.data.error) {
+          setErrors(res.data.error);
         } else {
-          console.log(json);
-          saveJWTinCookie(json.token, json.expireIn);
+          console.log(res.data);
+          saveJWTinCookie(res.data.token);
+          setAuthToken(res.data.token);
         }
       })
       .catch((err) => console.log(err));

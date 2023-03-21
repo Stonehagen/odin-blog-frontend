@@ -1,4 +1,6 @@
+import axios from 'axios';
 import { useState } from 'react';
+
 import '../styles/SignUp.css';
 
 const SignUp = () => {
@@ -11,15 +13,20 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     /// implement dotenv api url !!!
-    fetch('http://localhost:3000/user/sign-up', {
-      method: 'POST',
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    })
+    axios
+      .post(
+        'http://localhost:3000/user/sign-up',
+        {
+          name,
+          email,
+          password,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
       .then((res) => res.json())
       .then((json) => {
         if (json.error) {
