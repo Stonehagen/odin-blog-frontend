@@ -1,12 +1,13 @@
 import '../styles/Post.css';
+import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
-
+  console.log(post.title)
   return (
     <div className="Post">
       <h2>{post.title}</h2>
-      <p>{post.text}</p>
-      <p>{post.timestamp}</p>
+      <p>{post.text.substring(0, 300)}... </p>
+      <Link to={`/post/${post._id}`}>Read More</Link>
     </div>
   );
 };
