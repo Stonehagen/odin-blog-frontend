@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Post from './Post';
+import Hero from '../img/hero.jpg';
 
 import '../styles/Posts.css';
 
@@ -27,9 +28,11 @@ const Posts = () => {
 
   return (
     <div className="Posts">
-      {posts.map((post, index) => (
-        <Post key={index} post={post} />
-      ))}
+      <div className='PostsList'>
+        {posts.map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
+      </div>
     </div>
   );
 };

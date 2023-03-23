@@ -1,0 +1,73 @@
+@media (min-width: 800px) {
+  .Post {
+    grid-template-columns: 300px 1fr;
+  }
+  .PostText {
+    margin: 20px 0 20px -50px;
+  }
+  .PostImage img {
+    height: 250px;
+  }
+
+  .PostText p {
+    flex: 1;
+  }
+}
+
+@media (max-width: 799px) {
+  .Post {
+    grid-template-rows: 200px 1fr;
+  }
+
+  .PostText h2 {
+    font-size: 1.2em;
+  }
+
+  .PostText {
+    margin: -50px 20px 0 20px ;
+  }
+
+  .PostImage img {
+    height: 200px;
+  }
+}
+
+.Post {
+  margin: 0;
+  max-width: 1000px;
+  display: grid;
+}
+
+.PostImage img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.PostText {
+  background-color: white;
+  padding: 10px 20px;
+  border: 1px solid var(--highlight-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.PostText h2 {
+  margin: 0;
+}
+
+.PostText a {
+  align-self: flex-end;
+  text-decoration: none;
+  color: var(--background-color);
+  padding: 5px 10px;
+  background-color: var(--highlight-color);
+  margin: 0 -10px 0 0;
+  transition: padding 0.1s, border-radius 0.1s, background-color 0.2s;
+  font-weight: 400;
+}
+
+.PostText a:hover {
+  padding: 5px 10px 5px 35px;
+  border-radius: 25px 0 0 0;
+  background-color: var(--darker-background-color);
+}

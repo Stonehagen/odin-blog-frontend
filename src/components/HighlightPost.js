@@ -21,7 +21,7 @@ const HighlightPost = ({ post }) => {
       <div className="HighlightPostText">
         <h3>{thisPost.title}</h3>
         <p>{thisPost.text}...</p>
-        <Link to={`/post/${thisPost._id}`}>Read More</Link>
+        <Link to={`/post/${thisPost.id}`}>Read More</Link>
       </div>
     </div>
   );
