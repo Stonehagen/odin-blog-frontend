@@ -1,28 +1,27 @@
 @media (min-width: 800px) {
-	.Header {
+  .Header {
     grid-template-columns: 1fr 1fr 1fr;
-  }  
+  }
 
   .Header .SignMenu {
     justify-content: flex-end;
   }
-  .Header h1 {
-    text-align: center;
-  }
 }
 
 @media (max-width: 799px) {
-	.Header {
+  .Header {
     margin: 5px 0;
     grid-template-rows: 1fr 1fr 1fr;
-  }  
+  }
 
   .Header ul {
     margin: 0;
   }
-  
-}
 
+  .Header h1 {
+    text-align: center;
+  }
+}
 
 .Header {
   display: grid;
@@ -31,7 +30,6 @@
 }
 
 .Header h1 {
-  text-align: center;
   margin: 0;
   color: var(--highlight-color);
 }

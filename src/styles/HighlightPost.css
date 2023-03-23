@@ -1,9 +1,9 @@
 .HighlightPost {
   max-width: 400px;
-  width: 300px;
+  min-width: 300px;
   max-height: 800px;
   display: grid;
-  grid-template-rows: 300px 210px;
+  grid-template-rows: 300px 200px;
   color: var(--text-color);
   flex: 1;
   padding-bottom: 20px;
