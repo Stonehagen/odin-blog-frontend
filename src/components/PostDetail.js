@@ -26,9 +26,9 @@ const PostDetail = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  
+
   return (
-    <div className="Post">
+    <div className="PostDetail">
       <h2>{post.title}</h2>
       <p>{post.text}</p>
       <p>{post.timestamp}</p>

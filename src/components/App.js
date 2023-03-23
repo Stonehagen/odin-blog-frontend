@@ -9,6 +9,9 @@ import SignUp from './SignUp';
 import CreatePost from './CreatePost';
 import Posts from './Posts';
 import PostDetail from './PostDetail';
+import Home from './Home';
+import Header from './Header';
+import About from './About';
 
 const App = () => {
   const [cookies] = useCookies(['jwt_token']);
@@ -19,7 +22,10 @@ const App = () => {
 
   return (
     <BrowserRouter basename="/">
+      <Header />
       <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/post/:id" element={<PostDetail />} />  
         <Route path="/post/new" element={<CreatePost />} />

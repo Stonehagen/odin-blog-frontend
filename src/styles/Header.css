@@ -1,0 +1,37 @@
+.Header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.Header h1 {
+  margin: 0;
+  color: var(--highlight-color);
+}
+
+.Header ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.Header a {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.Header a:hover {
+  color: var(--highlight-color);
+}
+
+.Header .Menu {
+  justify-content: center;
+}
+
+.Header .SignMenu {
+  justify-content: flex-end;
+}
