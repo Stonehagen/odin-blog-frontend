@@ -1,0 +1,25 @@
+.About {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 30px;
+  padding: 50px 20px;
+  align-items: center;
+}
+
+.About h1 {
+  color: var(--highlight-color);
+  font-weight: 400;
+}
+
+.About p {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.About img {
+  margin: 20px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid var(--highlight-color);
+}

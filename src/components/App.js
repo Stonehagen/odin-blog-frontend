@@ -23,15 +23,17 @@ const App = () => {
   return (
     <BrowserRouter basename="/">
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path="/posts" element={<Posts />} />
-        <Route path="/post/:id" element={<PostDetail />} />  
-        <Route path="/post/new" element={<CreatePost />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<LogIn />} />
-      </Routes>
+      <div className='Main'>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/post/:id" element={<PostDetail />} />
+          <Route path="/post/new" element={<CreatePost />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<LogIn />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 };
