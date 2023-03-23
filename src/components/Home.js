@@ -2,6 +2,7 @@ import '../styles/Home.css';
 import HighlightPost from './HighlightPost';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Hero from '../img/hero.jpg';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -26,9 +27,15 @@ const Home = () => {
 
   return (
     <div className="Home">
-      {posts.slice(0,3).map((post, index) => {
-        return <HighlightPost key={index} post={post} />
-      })}
+      <div className="Hero">
+        <h1>TRAVEL BLOG</h1>
+        <img src={Hero} alt="Ireland Landscape" />
+      </div>
+      <div className="HighlightContainer">
+        {posts.slice(0, 3).map((post, index) => {
+          return <HighlightPost key={index} post={post} />;
+        })}
+      </div>
     </div>
   );
 };
