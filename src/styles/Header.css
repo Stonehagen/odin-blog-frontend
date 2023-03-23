@@ -2,7 +2,6 @@
   .Header {
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   .Header .SignMenu {
     justify-content: flex-end;
   }
@@ -13,13 +12,16 @@
     margin: 5px 0;
     grid-template-rows: 1fr 1fr 1fr;
   }
+  .Header h1 {
+    text-align: center;
+  }
 
   .Header ul {
     margin: 0;
   }
 
-  .Header h1 {
-    text-align: center;
+  .Header .SignMenu {
+    justify-content: center;
   }
 }
 
@@ -53,9 +55,5 @@
 }
 
 .Header .Menu {
-  justify-content: center;
-}
-
-.Header .SignMenu {
   justify-content: center;
 }
