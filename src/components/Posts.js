@@ -28,11 +28,9 @@ const Posts = () => {
 
   return (
     <div className="Posts">
-      <div className='PostsList'>
         {posts.map((post, index) => (
           <Post key={index} post={post} />
         ))}
-      </div>
     </div>
   );
 };

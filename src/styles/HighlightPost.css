@@ -3,7 +3,7 @@
   min-width: 300px;
   max-height: 800px;
   display: grid;
-  grid-template-rows: 300px 200px;
+  grid-template-rows: 300px 220px;
   color: var(--text-color);
   flex: 1;
   padding-bottom: 20px;
@@ -42,7 +42,7 @@
 .HighlightPostText {
   border: 1px solid var(--highlight-color);
   background-color: white;
-  margin: -100px 20px 0 20px;
+  margin: -80px 20px 0 20px;
   padding: 10px 20px 10px 20px;
   display: flex;
   flex-direction: column;

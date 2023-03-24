@@ -1,18 +1,17 @@
 @media (min-width: 800px) {
   .Posts {
-    gap: 20px;
     padding: 10px 20px;
   }
 }
 
 @media (max-width: 799px) {
   .Posts {
-    gap: 50px;
     padding: 10px 0;
   }
 }
 
 .Posts {
+  gap: 50px;
   display: flex;
   flex-direction: column;
 }

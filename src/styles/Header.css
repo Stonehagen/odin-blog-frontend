@@ -1,6 +1,8 @@
 @media (min-width: 800px) {
   .Header {
+    width: calc(100% - 40px);
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 20px;
   }
   .Header .SignMenu {
     justify-content: flex-end;
@@ -9,6 +11,7 @@
 
 @media (max-width: 799px) {
   .Header {
+    width: calc(100%);
     padding: 5px 0;
     grid-template-rows: 1fr 1fr 1fr;
   }
@@ -27,11 +30,10 @@
 
 .Header {
   position: fixed;
-  width: 100vw;
-  background-color: var(--background-color) ;
+
+  background-color: var(--background-color);
   display: grid;
   align-items: center;
-  padding: 0 20px;
 }
 
 .Header h1 {
