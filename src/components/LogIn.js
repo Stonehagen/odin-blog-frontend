@@ -1,16 +1,19 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
 
 import { setAuthToken } from '../methods/setAuthToken';
 import '../styles/LogIn.css';
 
-const LogIn = () => {
+const LogIn = ({ login }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
   const [cookies, setCookie] = useCookies(['jwt_token']);
+
+  const navigate = useNavigate();
 
   const saveJWTinCookie = (token) => {
     setCookie('jwt_token', token, {
@@ -39,11 +42,12 @@ const LogIn = () => {
         if (res.data.error) {
           setErrors(res.data.error);
         } else {
-          console.log(res.data);
           saveJWTinCookie(res.data.token);
           setAuthToken(res.data.token);
+          login(res.data.user.email, res.data.user.name);
         }
       })
+      .then(() => navigate('/'))
       .catch((err) => console.log(err));
   };
 

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/SignUp.css';
 
@@ -9,6 +10,8 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
   const [errors, setErrors] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,15 +30,22 @@ const SignUp = () => {
           },
         },
       )
-      .then((res) => res.json())
-      .then((json) => {
-        if (json.error) {
-          setErrors(json.error);
+      .then((res) => {
+        if (res.data.error) {
+          setErrors(res.data.error);
+          console.log(res.data.error)
         } else {
           setErrors([]);
         }
       })
-      .catch((err) => console.log(err));
+      .then(() => navigate('/login'))
+      .catch((err) => {
+        if (err.response.data.error) {
+          setErrors(err.response.data.error)
+        } else {
+          console.log(err);
+        }
+      });
   };
 
   return (
