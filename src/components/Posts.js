@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Post from './Post';
-import Hero from '../img/hero.jpg';
 
 import '../styles/Posts.css';
 

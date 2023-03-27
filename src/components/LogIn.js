@@ -11,7 +11,7 @@ const LogIn = ({ login }) => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
-  const [cookies, setCookie] = useCookies(['jwt_token']);
+  const [setCookie] = useCookies(['jwt_token']);
 
   const navigate = useNavigate();
 
