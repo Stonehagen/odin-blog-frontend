@@ -1,5 +1,6 @@
 @media (min-width: 800px) {
   .Header {
+    position: fixed;
     width: calc(100% - 40px);
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0 20px;
@@ -29,8 +30,7 @@
 }
 
 .Header {
-  position: fixed;
-
+  z-index: 1;
   background-color: var(--background-color);
   display: grid;
   align-items: center;

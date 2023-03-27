@@ -88,16 +88,16 @@ const SignUp = () => {
           type="password"
           onChange={(e) => setPasswordCheck(e.target.value)}
         />
-        <button type="submit">Create</button>
         <div className="messages">
           {errors.map((error, index) => {
             return (
               <p className="errorMessage" key={index}>
-                {error.msg}
+                - ! {error.msg}
               </p>
             );
           })}
         </div>
+        <button type="submit">Create</button>
       </form>
     </div>
   );
