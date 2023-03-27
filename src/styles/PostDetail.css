@@ -1,0 +1,31 @@
+@media (min-width: 800px) {
+  .PostDetail img {
+    max-height: 500px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 799px) {
+  .PostDetail img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+}
+
+
+.PostDetail {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+.PostDetail p,
+.PostDetail h2 {
+  padding: 0 15px;
+}
+
+.PostDetail h2 {
+  font-size: 1.3em;
+  font-weight: 400;
+  text-align: center;
+}

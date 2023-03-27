@@ -7,7 +7,7 @@ import '../styles/PostDetail.css';
 const PostDetail = () => {
   const [post, setPost] = useState([]);
 
-  const {id} = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     /// implement dotenv api url !!!
@@ -29,6 +29,7 @@ const PostDetail = () => {
 
   return (
     <div className="PostDetail">
+      <img alt="" src={`../img/${post._id}.jpg`} />
       <h2>{post.title}</h2>
       <p>{post.text}</p>
       <p>{post.timestamp}</p>
