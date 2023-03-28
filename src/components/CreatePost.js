@@ -36,8 +36,8 @@ const CreatePost = () => {
 
   return (
     <div className="CreatePost">
-      <h1>Create New Post</h1>
       <form onSubmit={handleSubmit}>
+        <h1>Create New Post</h1>
         <label htmlFor="tile">Title</label>
         <input
           name="title"

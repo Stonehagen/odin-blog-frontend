@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import '../styles/PostDetail.css';
 
@@ -21,18 +21,36 @@ const PostDetail = () => {
         if (res.data.error) {
           return res.data.error;
         } else {
-          setPost(res.data.post);
+          const newTimestamp = new Date(res.data.post.timestamp);
+          setPost({
+            id: res.data.post._id,
+            title: res.data.post.title,
+            text: res.data.post.text,
+            time: `${newTimestamp.getHours()} : ${newTimestamp
+              .getMinutes()
+              .toString()
+              .padStart(2, '0')}`,
+            date: `${newTimestamp.getDate().toString().padStart(2, '0')}/${(
+              newTimestamp.getMonth() + 1
+            )
+              .toString()
+              .padStart(2, '0')}/${(newTimestamp.getYear() + 1900)
+              .toString()
+              .padStart(4, '0')}`,
+          });
         }
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   return (
     <div className="PostDetail">
-      <img alt="" src={`../img/${post._id}.jpg`} />
+      <img alt="" src={`../img/${post.id}.jpg`} />
       <h2>{post.title}</h2>
       <p>{post.text}</p>
-      <p>{post.timestamp}</p>
+      <p className='PostDate'>
+        {post.date} - {post.time}
+      </p>
     </div>
   );
 };

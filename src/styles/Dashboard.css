@@ -1,0 +1,26 @@
+.Dashboard {
+  width: 100%;
+}
+
+.DashboardMenu {
+  background: white;
+}
+
+.DashboardMenu ul {
+  list-style: none;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+.DashboardMenu a {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.DashboardMenu a:hover {
+  color: var(--highlight-color);
+}

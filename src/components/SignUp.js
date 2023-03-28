@@ -33,7 +33,7 @@ const SignUp = () => {
       .then((res) => {
         if (res.data.error) {
           setErrors(res.data.error);
-          console.log(res.data.error)
+          console.log(res.data.error);
         } else {
           setErrors([]);
         }
@@ -41,7 +41,7 @@ const SignUp = () => {
       .then(() => navigate('/login'))
       .catch((err) => {
         if (err.response.data.error) {
-          setErrors(err.response.data.error)
+          setErrors(err.response.data.error);
         } else {
           console.log(err);
         }
@@ -50,8 +50,8 @@ const SignUp = () => {
 
   return (
     <div className="SignUp">
-      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
+        <h1>Sign Up</h1>
         <label htmlFor="name">Name</label>
         <input
           name="name"

@@ -29,3 +29,7 @@
   font-weight: 400;
   text-align: center;
 }
+
+.PostDetail .PostDate {
+  text-align: right;
+}

@@ -11,7 +11,7 @@ const LogIn = ({ login }) => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
-  const [setCookie] = useCookies(['jwt_token']);
+  const [cookie, setCookie] = useCookies(['jwt_token']);
 
   const navigate = useNavigate();
 
@@ -48,13 +48,19 @@ const LogIn = ({ login }) => {
         }
       })
       .then(() => navigate('/'))
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (err.response.data.error) {
+          setErrors(err.response.data.error);
+        } else {
+          console.log(err);
+        }
+      });
   };
 
   return (
     <div className="LogIn">
-      <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
+        <h1>Log In</h1>
         <label htmlFor="email">Email</label>
         <input
           name="email"

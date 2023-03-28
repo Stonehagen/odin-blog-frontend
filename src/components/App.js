@@ -14,6 +14,7 @@ import Header from './Header';
 import About from './About';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Dashboard from './Dashboard';
 
 const App = () => {
   const [user, setUser] = useState();
@@ -72,6 +73,7 @@ const App = () => {
           <Route path="/post/new" element={<CreatePost />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn login={login}/>} />
+          <Route path="/dashboard" element={<Dashboard user={user}/>} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,8 +1,7 @@
 import '../styles/Header.css';
 import { Link } from 'react-router-dom';
 
-const Header = ({ user , logout}) => {
-
+const Header = ({ user, logout }) => {
   return (
     <div className="Header">
       <h1>STONEHAGEN</h1>
@@ -11,7 +10,7 @@ const Header = ({ user , logout}) => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/posts">All Posts</Link>
+          <Link to="/posts">Posts</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
@@ -20,7 +19,14 @@ const Header = ({ user , logout}) => {
       {user ? (
         <ul className="SignMenu">
           <li>
-            <Link to="/" onClick={logout}>Log Out</Link>
+            <Link to="/dashboard">
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link to="/" onClick={logout}>
+              Log Out
+            </Link>
           </li>
         </ul>
       ) : (
