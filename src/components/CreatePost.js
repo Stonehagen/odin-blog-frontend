@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 
 import '../styles/CreatePost.css';
+import DashboardMenu from './DashboardMenu';
 
 const CreatePost = () => {
   const [title, setTitle] = useState('');
@@ -36,6 +37,7 @@ const CreatePost = () => {
 
   return (
     <div className="CreatePost">
+      <DashboardMenu />
       <form onSubmit={handleSubmit}>
         <h1>Create New Post</h1>
         <label htmlFor="tile">Title</label>

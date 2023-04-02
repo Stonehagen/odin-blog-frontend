@@ -1,5 +1,7 @@
-.Dashboard {
-  width: 100%;
+.Dashboard .Editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .DashboardMenu {

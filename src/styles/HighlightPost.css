@@ -13,6 +13,7 @@
   width: 100%;
   height: 300px;
   object-fit: cover;
+  box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.4);
 }
 
 .HighlightPostText a {
@@ -46,6 +47,7 @@
   padding: 10px 20px 10px 20px;
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.4);
 }
 
 .HighlightPostText p {
