@@ -54,7 +54,7 @@ const CreatePost = () => {
           name="text"
           value={text}
           id="text"
-          placeholder="Your Story ..."
+          placeholder="Your Story"
           type="text"
           onChange={(e) => setText(e.target.value)}
         />
