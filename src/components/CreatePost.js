@@ -50,11 +50,11 @@ const CreatePost = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <label htmlFor="text">Text</label>
-        <input
+        <textarea
           name="text"
           value={text}
           id="text"
-          placeholder="text"
+          placeholder="Your Story ..."
           type="text"
           onChange={(e) => setText(e.target.value)}
         />

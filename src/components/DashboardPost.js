@@ -40,8 +40,6 @@ const DashboardPost = ({ post }) => {
       .then((res) => {
         if (res.data.error) {
           console.log(res.data.error)
-        } else {
-          console.log(res.data);
         }
       })
       .catch((err) => console.log(err));
