@@ -17,11 +17,12 @@
   display: flex;
   flex-direction: column;
   max-width: 1000px;
+  width: 100%;
 }
 
 .PostDetail p,
 .PostDetail h2 {
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 .PostDetail h2 {

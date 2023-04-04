@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import '../styles/PostDetail.css';
 
@@ -39,9 +39,21 @@ const PostDetail = () => {
               .padStart(4, '0')}`,
           });
         }
+        return axios.get(`http://localhost:3000/comment/post/${id}/`, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+      })
+      .then((res) => {
+        if (res.data.error) {
+          return res.data.error;
+        } else {
+          console.log(res.data.comments)
+        }
       })
       .catch((err) => console.log(err));
-  });
+  }, []);
 
   return (
     <div className="PostDetail">

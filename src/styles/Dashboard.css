@@ -1,12 +1,18 @@
+.Dashboard {
+  padding: 25px 0 0 0;
+}
+
 .Dashboard .Editor {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 0 10px;
 }
 
 .DashboardMenu {
   background: var(--highlight-color);
   border-radius: 20px;
+  margin: 0 10px;
 }
 
 .DashboardMenu ul {
@@ -29,6 +35,6 @@
 }
 
 .DashboardMenu .active a {
-  color: black;
+  font-weight: 600;
   text-decoration: underline;
 }
