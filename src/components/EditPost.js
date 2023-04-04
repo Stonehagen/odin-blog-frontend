@@ -49,7 +49,8 @@ const EditPost = ({ user }) => {
       });
   };
 
-  const deletePost = () => {
+  const deletePost = (e) => {
+    e.preventDefault();
     /// implement dotenv api url !!!
     axios
       .delete(
