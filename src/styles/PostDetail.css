@@ -12,7 +12,6 @@
   }
 }
 
-
 .PostDetail {
   display: flex;
   flex-direction: column;
@@ -33,4 +32,89 @@
 
 .PostDetail .PostDate {
   text-align: right;
+}
+
+.Comments {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.Comments h2 {
+  align-self: flex-start;
+}
+
+.Comment {
+  align-self: stretch;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid rgb(162, 162, 162);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 10px -2px rgb(162, 162, 162);
+  border-radius: 5px;
+}
+
+.Comment p {
+  padding: 0;
+  margin: 0;
+}
+
+.Comment .text {
+  margin: 10px;
+}
+
+.Comment .credentials {
+  text-align: end;
+  font-weight: 400;
+  padding: 0 10px 0 0;
+}
+
+.Comment .date {
+  text-align: end;
+  color: gray;
+  font-weight: 200;
+  font-size: 0.8em;
+}
+
+.newComment {
+  font-size: 1em;
+  font-weight: 400;
+  margin: 10px;
+}
+
+.Comments form {
+  padding: 0 10px;
+  margin-top: 25px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.Comments form input {
+  border-radius: 5px;
+  width: 200px;
+  margin: 0;
+}
+
+.Comments form textarea {
+  align-self: stretch;
+  border-radius: 5px;
+  resize: none;
+}
+
+.commentGroup {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.Comments button {
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.Comments h4 {
+  margin: 10px 0;
 }

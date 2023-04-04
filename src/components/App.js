@@ -55,6 +55,7 @@ const App = () => {
             setUser({
               email: res.data.email,
               name: res.data.name,
+              id: res.data._id
             });
           }
         })
@@ -70,7 +71,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/posts" element={<Posts />} />
-          <Route path="/post/:id" element={<PostDetail />} />
+          <Route path="/post/:id" element={<PostDetail user={user}/>} />
           <Route path="/post/:id/edit" element={<EditPost user={user}/>} />
           <Route path="/post/new" element={<CreatePost user={user}/>} />
           <Route path="/signup" element={<SignUp />} />
