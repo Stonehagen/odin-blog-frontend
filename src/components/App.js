@@ -71,8 +71,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/post/:id" element={<PostDetail />} />
-          <Route path="/post/:id/edit" element={<EditPost />} />
-          <Route path="/post/new" element={<CreatePost />} />
+          <Route path="/post/:id/edit" element={<EditPost user={user}/>} />
+          <Route path="/post/new" element={<CreatePost user={user}/>} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn login={login} />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />

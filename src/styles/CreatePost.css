@@ -31,3 +31,21 @@
 .CreatePost textarea {
   resize: none;
 }
+
+.deleteBtn {
+  border-radius: 5px;
+  width: 120px;
+  margin-top: 50px;
+  font-size: 1em;
+  border: none;
+  color: var(--background-color);
+  padding: 10px 5px;
+  background-color: rgb(204, 173, 173);
+  transition: background-color 0.5s;
+  font-weight: 400;
+}
+
+.deleteBtn:hover {
+  background-color: rgb(191, 68, 68);
+  cursor: pointer;
+}

@@ -1,14 +1,16 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '../styles/CreatePost.css';
 import DashboardMenu from './DashboardMenu';
 
-const CreatePost = () => {
+const CreatePost = ({ user }) => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [errors, setErrors] = useState([]);
 
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,11 +32,17 @@ const CreatePost = () => {
         if (res.data.error) {
           setErrors(res.data.error);
         } else {
-          console.log(res.data);
+          navigate(`/dashboard`);
         }
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    if (!user) {
+      navigate('/login');
+    }
+  });
 
   return (
     <div className="CreatePost">

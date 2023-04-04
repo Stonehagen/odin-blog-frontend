@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/CreatePost.css';
 import DashboardMenu from './DashboardMenu';
 
-const EditPost = () => {
+const EditPost = ({ user }) => {
   const [post, setPost] = useState([]);
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
@@ -49,7 +49,37 @@ const EditPost = () => {
       });
   };
 
+  const deletePost = () => {
+    /// implement dotenv api url !!!
+    axios
+      .delete(
+        `http://localhost:3000/post/${id}`,
+        {},
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+      .then((res) => {
+        if (res.data.error) {
+          console.log(res.data.error);
+        }
+      })
+      .then(() => navigate('/dashboard'))
+      .catch((err) => {
+        if (err.response.data.error) {
+          setErrors(err.response.data.error);
+        } else {
+          console.log(err);
+        }
+      });
+  };
+
   useEffect(() => {
+    if (!user) {
+      navigate('/login');
+    }
     /// implement dotenv api url !!!
     axios
       .get(`http://localhost:3000/post/${id}/`, {
@@ -119,6 +149,9 @@ const EditPost = () => {
             );
           })}
         </div>
+        <button className="deleteBtn" onClick={deletePost}>
+          Delete Post
+        </button>
       </form>
     </div>
   );
