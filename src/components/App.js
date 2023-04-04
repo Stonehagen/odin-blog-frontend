@@ -15,6 +15,7 @@ import About from './About';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Dashboard from './Dashboard';
+import EditPost from './EditPost';
 
 const App = () => {
   const [user, setUser] = useState();
@@ -30,7 +31,7 @@ const App = () => {
       email,
       name,
     });
-  }
+  };
 
   const logout = () => {
     setUser();
@@ -70,10 +71,11 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/post/:id" element={<PostDetail />} />
+          <Route path="/post/:id/edit" element={<EditPost />} />
           <Route path="/post/new" element={<CreatePost />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<LogIn login={login}/>} />
-          <Route path="/dashboard" element={<Dashboard user={user}/>} />
+          <Route path="/login" element={<LogIn login={login} />} />
+          <Route path="/dashboard" element={<Dashboard user={user} />} />
         </Routes>
       </div>
     </BrowserRouter>

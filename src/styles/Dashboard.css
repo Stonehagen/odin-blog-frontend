@@ -5,7 +5,8 @@
 }
 
 .DashboardMenu {
-  background: white;
+  background: var(--highlight-color);
+  border-radius: 20px;
 }
 
 .DashboardMenu ul {
@@ -20,9 +21,9 @@
 .DashboardMenu a {
   font-size: 1.2em;
   text-decoration: none;
-  color: var(--text-color);
+  color: white;
 }
 
 .DashboardMenu a:hover {
-  color: var(--highlight-color);
+  color: black;
 }

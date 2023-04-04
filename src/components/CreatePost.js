@@ -9,6 +9,7 @@ const CreatePost = () => {
   const [text, setText] = useState('');
   const [errors, setErrors] = useState([]);
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     /// implement dotenv api url !!!

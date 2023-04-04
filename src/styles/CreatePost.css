@@ -1,0 +1,33 @@
+@media (min-width: 800px) {
+  .CreatePost textarea {
+    width: 600px;
+    height: 480px;
+  }
+
+  .CreatePost input {
+    width: 600px;
+  }
+
+  .CreatePost form {
+    max-width: 610px;
+  }
+}
+
+@media (max-width: 799px) {
+  .CreatePost textarea {
+    width: 290px;
+    height: 280px;
+  }
+
+  .CreatePost input {
+    width: 290px;
+  }
+
+  .CreatePost form {
+    max-width: 300px;
+  }
+}
+
+.CreatePost textarea {
+  resize: none;
+}
