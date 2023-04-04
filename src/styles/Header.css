@@ -62,3 +62,8 @@
 .Header .Menu {
   justify-content: center;
 }
+
+.Header .active a {
+  color: var(--highlight-color);
+  text-decoration: underline;
+}

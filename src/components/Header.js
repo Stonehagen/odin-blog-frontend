@@ -1,24 +1,25 @@
 import '../styles/Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = ({ user, logout }) => {
+  const { pathname } = useLocation();
   return (
     <div className="Header">
       <h1>STONEHAGEN</h1>
       <ul className="Menu">
-        <li>
+        <li className={pathname.toLowerCase() === '/' ? 'active' : ''}>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className={pathname.toLowerCase() === '/posts' ? 'active' : ''}>
           <Link to="/posts">Posts</Link>
         </li>
-        <li>
+        <li className={pathname.toLowerCase() === '/about' ? 'active' : ''}>
           <Link to="/about">About</Link>
         </li>
       </ul>
       {user ? (
         <ul className="SignMenu">
-          <li>
+          <li className={pathname.toLowerCase() === '/dashboard' ? 'active' : ''}>
             <Link to="/dashboard">
               Dashboard
             </Link>

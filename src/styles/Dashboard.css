@@ -27,3 +27,8 @@
 .DashboardMenu a:hover {
   color: black;
 }
+
+.DashboardMenu .active a {
+  color: black;
+  text-decoration: underline;
+}
