@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'dotenv/config';
 import '../styles/CreatePost.css';
 
 import DashboardMenu from './DashboardMenu';
-
+ 
 const CreatePost = ({ user }) => {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
@@ -17,7 +16,7 @@ const CreatePost = ({ user }) => {
     e.preventDefault();
     axios
       .post(
-        `${process.env.BACKENDSERVER}/post/new`,
+        `${process.env.REACT_APP_BACKENDSERVER}/post/new`,
         {
           title,
           text,

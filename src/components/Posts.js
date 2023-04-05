@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Post from './Post';
-import 'dotenv/config';
 import '../styles/Posts.css';
 
 const Posts = () => {
@@ -9,7 +8,7 @@ const Posts = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.BACKENDSERVER}/post`, {
+      .get(`${process.env.REACT_APP_BACKENDSERVER}/post`, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -2,7 +2,6 @@ import { useCookies } from 'react-cookie';
 import { setAuthToken } from '../methods/setAuthToken';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import 'dotenv/config';
 import '../styles/App.css';
 
 import LogIn from './LogIn';
@@ -16,7 +15,7 @@ import About from './About';
 import axios from 'axios';
 import Dashboard from './Dashboard';
 import EditPost from './EditPost';
-
+ 
 const App = () => {
   const [user, setUser] = useState();
   const [cookies, removeCookie] = useCookies(['jwt_token']);
@@ -42,7 +41,7 @@ const App = () => {
   useEffect(() => {
     if (!user && token) {
       axios
-        .get(`${process.env.BACKENDSERVER}/session`, {
+        .get(`${process.env.REACT_APP_BACKENDSERVER}/session`, {
           headers: {
             'Content-Type': 'application/json',
           },

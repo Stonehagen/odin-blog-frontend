@@ -3,14 +3,16 @@ import HighlightPost from './HighlightPost';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Hero from '../img/hero.jpg';
-import 'dotenv/config';
 
+ 
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
+  console.log(`${process.env.REACT_APP_BACKENDSERVER}/post/latest/10`)
+
   useEffect(() => {
     axios
-      .get(`${process.env.BACKENDSERVER}/post/latest/10`, {
+      .get(`${process.env.REACT_APP_BACKENDSERVER}/post/latest/10`, {
         headers: {
           'Content-Type': 'application/json',
         },

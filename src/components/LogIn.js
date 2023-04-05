@@ -2,11 +2,10 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
-import 'dotenv/config';
 import '../styles/LogIn.css';
 
 import { setAuthToken } from '../methods/setAuthToken';
-
+ 
 const LogIn = ({ login }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +26,7 @@ const LogIn = ({ login }) => {
     e.preventDefault();
     axios
       .post(
-        `${process.env.BACKENDSERVER}/user/log-in`,
+        `${process.env.REACT_APP_BACKENDSERVER}/user/log-in`,
         {
           email,
           password,

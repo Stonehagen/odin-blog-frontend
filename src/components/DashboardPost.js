@@ -1,7 +1,6 @@
 import '../styles/DashboardPost.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import 'dotenv/config';
 
 const DashboardPost = ({ post }) => {
   const formatTime = (timestamp) => {
@@ -24,7 +23,7 @@ const DashboardPost = ({ post }) => {
   const changePublish = () => {
     axios
       .put(
-        `${process.env.BACKENDSERVER}/post/${post._id}`,
+        `${process.env.REACT_APP_BACKENDSERVER}/post/${post._id}`,
         {
           _id: post._id,
           title: post.title,

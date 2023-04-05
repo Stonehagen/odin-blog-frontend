@@ -2,11 +2,10 @@ import '../styles/Dashboard.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import 'dotenv/config';
 
 import DashboardPost from './DashboardPost';
 import DashboardMenu from './DashboardMenu';
-
+ 
 const Dashboard = ({ user }) => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ const Dashboard = ({ user }) => {
       navigate('/login');
     }
     axios
-      .get(`${process.env.BACKENDSERVER}/post/all`, {
+      .get(`${process.env.REACT_APP_BACKENDSERVER}/post/all`, {
         headers: {
           'Content-Type': 'application/json',
         },

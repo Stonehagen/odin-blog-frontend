@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import 'dotenv/config';
 import '../styles/CreatePost.css';
 
 import DashboardMenu from './DashboardMenu';
-
+ 
 const EditPost = ({ user }) => {
   const [post, setPost] = useState([]);
   const [title, setTitle] = useState('');
@@ -20,7 +19,7 @@ const EditPost = ({ user }) => {
     e.preventDefault();
     axios
       .put(
-        `${process.env.BACKENDSERVER}/post/${id}`,
+        `${process.env.REACT_APP_BACKENDSERVER}/post/${id}`,
         {
           _id: id,
           title: title,
@@ -53,7 +52,7 @@ const EditPost = ({ user }) => {
     e.preventDefault();
     axios
       .delete(
-        `${process.env.BACKENDSERVER}/post/${id}`,
+        `${process.env.REACT_APP_BACKENDSERVER}/post/${id}`,
         {},
         {
           headers: {
@@ -81,7 +80,7 @@ const EditPost = ({ user }) => {
       navigate('/login');
     }
     axios
-      .get(`${process.env.BACKENDSERVER}/post/${id}/`, {
+      .get(`${process.env.REACT_APP_BACKENDSERVER}/post/${id}/`, {
         headers: {
           'Content-Type': 'application/json',
         },

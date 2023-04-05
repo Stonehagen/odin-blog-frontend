@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'dotenv/config';
 import '../styles/SignUp.css';
-
+ 
 const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -17,7 +16,7 @@ const SignUp = () => {
     e.preventDefault();
     axios
       .post(
-        `${process.env.BACKENDSERVER}/user/sign-up`,
+        `${process.env.REACT_APP_BACKENDSERVER}/user/sign-up`,
         {
           name,
           email,

@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import 'dotenv/config';
 import '../styles/PostDetail.css';
-
+ 
 const PostDetail = ({ user }) => {
   const [post, setPost] = useState([]);
   const [comments, setComments] = useState([]);
@@ -34,7 +33,7 @@ const PostDetail = ({ user }) => {
   const deleteComment = (commentId) => {
     axios
       .delete(
-        `${process.env.BACKENDSERVER}/comment/${commentId}`,
+        `${process.env.REACT_APP_BACKENDSERVER}/comment/${commentId}`,
         {},
         {
           headers: {
@@ -56,7 +55,7 @@ const PostDetail = ({ user }) => {
     e.preventDefault();
     axios
       .post(
-        `${process.env.BACKENDSERVER}/comment/new`,
+        `${process.env.REACT_APP_BACKENDSERVER}/comment/new`,
         {
           text: commentText,
           author: commentName ? commentName : 'Anonymous',
@@ -93,7 +92,7 @@ const PostDetail = ({ user }) => {
       }
     }
     axios
-      .get(`${process.env.BACKENDSERVER}/post/${id}/`, {
+      .get(`${process.env.REACT_APP_BACKENDSERVER}/post/${id}/`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -112,7 +111,7 @@ const PostDetail = ({ user }) => {
             date,
           });
         }
-        return axios.get(`${process.env.BACKENDSERVER}/comment/post/${id}/`, {
+        return axios.get(`${process.env.REACT_APP_BACKENDSERVER}/comment/post/${id}/`, {
           headers: {
             'Content-Type': 'application/json',
           },
