@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import 'dotenv/config';
 import '../styles/CreatePost.css';
+
 import DashboardMenu from './DashboardMenu';
 
 const CreatePost = ({ user }) => {
@@ -14,10 +15,9 @@ const CreatePost = ({ user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /// implement dotenv api url !!!
     axios
       .post(
-        'http://localhost:3000/post/new',
+        `${process.env.BACKENDSERVER}/post/new`,
         {
           title,
           text,

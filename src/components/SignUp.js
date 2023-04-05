@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import 'dotenv/config';
 import '../styles/SignUp.css';
 
 const SignUp = () => {
@@ -15,10 +15,9 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /// implement dotenv api url !!!
     axios
       .post(
-        'http://localhost:3000/user/sign-up',
+        `${process.env.BACKENDSERVER}/user/sign-up`,
         {
           name,
           email,

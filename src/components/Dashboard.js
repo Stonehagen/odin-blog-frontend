@@ -2,6 +2,8 @@ import '../styles/Dashboard.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import 'dotenv/config';
+
 import DashboardPost from './DashboardPost';
 import DashboardMenu from './DashboardMenu';
 
@@ -13,9 +15,8 @@ const Dashboard = ({ user }) => {
     if (!user) {
       navigate('/login');
     }
-    /// implement dotenv api url !!!
     axios
-      .get('http://localhost:3000/post/all', {
+      .get(`${process.env.BACKENDSERVER}/post/all`, {
         headers: {
           'Content-Type': 'application/json',
         },

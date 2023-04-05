@@ -2,9 +2,10 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import 'dotenv/config';
+import '../styles/LogIn.css';
 
 import { setAuthToken } from '../methods/setAuthToken';
-import '../styles/LogIn.css';
 
 const LogIn = ({ login }) => {
   const [email, setEmail] = useState('');
@@ -24,10 +25,9 @@ const LogIn = ({ login }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /// implement dotenv api url !!!
     axios
       .post(
-        'http://localhost:3000/user/log-in',
+        `${process.env.BACKENDSERVER}/user/log-in`,
         {
           email,
           password,

@@ -1,7 +1,8 @@
 import { useCookies } from 'react-cookie';
 import { setAuthToken } from '../methods/setAuthToken';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
+import { useEffect, useState } from 'react';
+import 'dotenv/config';
 import '../styles/App.css';
 
 import LogIn from './LogIn';
@@ -12,7 +13,6 @@ import PostDetail from './PostDetail';
 import Home from './Home';
 import Header from './Header';
 import About from './About';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Dashboard from './Dashboard';
 import EditPost from './EditPost';
@@ -40,10 +40,9 @@ const App = () => {
   };
 
   useEffect(() => {
-    /// implement dotenv api url !!!
     if (!user && token) {
       axios
-        .get('http://localhost:3000/session', {
+        .get(`${process.env.BACKENDSERVER}/session`, {
           headers: {
             'Content-Type': 'application/json',
           },

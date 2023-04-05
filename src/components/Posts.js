@@ -1,16 +1,15 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Post from './Post';
-
+import 'dotenv/config';
 import '../styles/Posts.css';
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    /// implement dotenv api url !!!
     axios
-      .get('http://localhost:3000/post', {
+      .get(`${process.env.BACKENDSERVER}/post`, {
         headers: {
           'Content-Type': 'application/json',
         },

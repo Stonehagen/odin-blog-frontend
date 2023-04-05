@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import 'dotenv/config';
 import '../styles/CreatePost.css';
+
 import DashboardMenu from './DashboardMenu';
 
 const EditPost = ({ user }) => {
@@ -17,10 +18,9 @@ const EditPost = ({ user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /// implement dotenv api url !!!
     axios
       .put(
-        `http://localhost:3000/post/${id}`,
+        `${process.env.BACKENDSERVER}/post/${id}`,
         {
           _id: id,
           title: title,
@@ -51,10 +51,9 @@ const EditPost = ({ user }) => {
 
   const deletePost = (e) => {
     e.preventDefault();
-    /// implement dotenv api url !!!
     axios
       .delete(
-        `http://localhost:3000/post/${id}`,
+        `${process.env.BACKENDSERVER}/post/${id}`,
         {},
         {
           headers: {
@@ -81,9 +80,8 @@ const EditPost = ({ user }) => {
     if (!user) {
       navigate('/login');
     }
-    /// implement dotenv api url !!!
     axios
-      .get(`http://localhost:3000/post/${id}/`, {
+      .get(`${process.env.BACKENDSERVER}/post/${id}/`, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -3,14 +3,14 @@ import HighlightPost from './HighlightPost';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Hero from '../img/hero.jpg';
+import 'dotenv/config';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    /// implement dotenv api url !!!
     axios
-      .get(`http://localhost:3000/post/latest/10`, {
+      .get(`${process.env.BACKENDSERVER}/post/latest/10`, {
         headers: {
           'Content-Type': 'application/json',
         },

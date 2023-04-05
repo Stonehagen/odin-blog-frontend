@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import 'dotenv/config';
 import '../styles/PostDetail.css';
 
 const PostDetail = ({ user }) => {
@@ -34,7 +34,7 @@ const PostDetail = ({ user }) => {
   const deleteComment = (commentId) => {
     axios
       .delete(
-        `http://localhost:3000/comment/${commentId}`,
+        `${process.env.BACKENDSERVER}/comment/${commentId}`,
         {},
         {
           headers: {
@@ -52,12 +52,11 @@ const PostDetail = ({ user }) => {
       .catch((err) => console.log(err));
   };
 
-  const handleSubmit = (e) => {
+  const addComment = (e) => {
     e.preventDefault();
-    /// implement dotenv api url !!!
     axios
       .post(
-        'http://localhost:3000/comment/new',
+        `${process.env.BACKENDSERVER}/comment/new`,
         {
           text: commentText,
           author: commentName ? commentName : 'Anonymous',
@@ -93,9 +92,8 @@ const PostDetail = ({ user }) => {
         setOwner(true);
       }
     }
-    /// implement dotenv api url !!!
     axios
-      .get(`http://localhost:3000/post/${id}/`, {
+      .get(`${process.env.BACKENDSERVER}/post/${id}/`, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -114,7 +112,7 @@ const PostDetail = ({ user }) => {
             date,
           });
         }
-        return axios.get(`http://localhost:3000/comment/post/${id}/`, {
+        return axios.get(`${process.env.BACKENDSERVER}/comment/post/${id}/`, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -164,7 +162,7 @@ const PostDetail = ({ user }) => {
             </div>
           );
         })}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={addComment}>
           <h4 className="newComment">New Comment</h4>
           <label htmlFor="comment">Comment</label>
           <textarea
