@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../styles/PostDetail.css';
+import { loadImage } from '../methods/loadImage';
  
 const PostDetail = ({ user }) => {
   const [post, setPost] = useState([]);
@@ -130,7 +131,7 @@ const PostDetail = ({ user }) => {
 
   return (
     <div className="PostDetail">
-      <img alt="" src={`../img/${post.id}.jpg`} />
+      <img alt="" src={loadImage(post.id)} />
       <h2>{post.title}</h2>
       <p>{post.text}</p>
       <p className="PostDate">

@@ -8,8 +8,6 @@ import Hero from '../img/hero.jpg';
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
-  console.log(`${process.env.REACT_APP_BACKENDSERVER}/post/latest/10`)
-
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_BACKENDSERVER}/post/latest/10`, {

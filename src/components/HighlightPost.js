@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import '../styles/HighlightPost.css';
 import { Link } from 'react-router-dom';
+import { loadImage } from '../methods/loadImage';
 
 const HighlightPost = ({ post }) => {
-  const [thisPost, setThisPost] = useState({
+  const thisPost = {
     id: post._id,
     title: post.title,
     text: post.text.substring(0, 150),
@@ -13,11 +13,11 @@ const HighlightPost = ({ post }) => {
       month: 'short',
       day: 'numeric',
     }),
-  });
+  };
 
   return (
     <div className="HighlightPost">
-      <img alt="" src={`../img/${thisPost.id}.jpg`} />
+      <img alt="" src={loadImage(thisPost.id)} />
       <div className="HighlightPostText">
         <h3>{thisPost.title}</h3>
         <p>{thisPost.text}...</p>

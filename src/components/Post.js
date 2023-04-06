@@ -1,11 +1,12 @@
 import '../styles/Post.css';
 import { Link } from 'react-router-dom';
+import { loadImage } from '../methods/loadImage';
 
 const Post = ({ post }) => {
   return (
     <div className="Post">
       <div className="PostImage">
-        <img alt="" src={`../img/${post._id}.jpg`} />
+        <img alt="" src={loadImage(post._id)} />
       </div>
       <div className="PostText">
         <h2>{post.title}</h2>
