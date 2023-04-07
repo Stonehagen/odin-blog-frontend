@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/odin-blog-frontend/static/css/main.70034170.css",
+    "main.js": "/odin-blog-frontend/static/js/main.da8b27ce.js",
+    "static/media/hero.jpg": "/odin-blog-frontend/static/media/hero.54c442a260f81eccd885.jpg",
+    "static/media/Stonehagen.png": "/odin-blog-frontend/static/media/Stonehagen.f80d987012b9d2d5d86f.png",
+    "index.html": "/odin-blog-frontend/index.html",
+    "main.70034170.css.map": "/odin-blog-frontend/static/css/main.70034170.css.map",
+    "main.da8b27ce.js.map": "/odin-blog-frontend/static/js/main.da8b27ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70034170.css",
+    "static/js/main.da8b27ce.js"
+  ]
+}
