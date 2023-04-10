@@ -1,8 +1,11 @@
 export const loadImage = (fileName) => {
-  let image = new Image();
+  const image = new Image();
   let src = `../img/${fileName}.jpg`;
   image.src = src;
-  return image.width === 0
+  image.onload = () => {
+    src = image.width === 0
     ? `../img/default.jpg`
     : `../img/${fileName}.jpg`;
+  }
+  return src;
 };
