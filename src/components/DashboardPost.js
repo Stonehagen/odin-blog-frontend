@@ -1,10 +1,8 @@
 import '../styles/DashboardPost.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const DashboardPost = ({ post }) => {
-  const navigate = useNavigate();
-
   const formatTime = (timestamp) => {
     const newTimestamp = new Date(timestamp);
     const time = `${newTimestamp.getHours()} : ${newTimestamp
@@ -48,10 +46,7 @@ const DashboardPost = ({ post }) => {
   };
 
   return (
-    <div
-      className="DashboardPost"
-      onClick={() => navigate(`/post/${post._id}`)}
-    >
+    <div className="DashboardPost">
       <h4>{post.title}</h4>
       <div className="DashboardPostSub">
         <p>{formatTime(post.timestamp)}</p>
