@@ -16,6 +16,10 @@
   box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.4);
 }
 
+.HighlightPostText:hover {
+  cursor: pointer;
+}
+
 .HighlightPostText a {
   align-self: flex-end;
   text-decoration: none;
