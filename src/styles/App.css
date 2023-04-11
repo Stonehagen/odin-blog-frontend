@@ -2,14 +2,42 @@
   .Main {
     margin-top: 50px;
   }
+  .LogIn,
+  .SignUp,
+  .Home,
+  .Posts,
+  .PostDetail,
+  .EditPost  {
+    min-height: calc(100vh - 149px);
+  }
+
+  .About {
+    min-height: calc(100vh - 229px);
+  }
+
+  .CreatePost,
+  .Dashboard {
+    min-height: calc(100vh - 174px);
+  }
+
 }
 
 @media (max-width: 799px) {
+  .LogIn,
+  .SignUp,
+  .Home,
+  .Posts,
+  .PostDetail,
+  .EditPost,
+  .CreatePost,
+  .Dashboard,
+  .About {
+    min-height: calc(100vh - 224px);
+  }
 }
 
 .Main {
   display: flex;
-  height: 100%;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;

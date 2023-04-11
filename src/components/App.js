@@ -15,6 +15,7 @@ import About from './About';
 import axios from 'axios';
 import Dashboard from './Dashboard';
 import EditPost from './EditPost';
+import Impress from './Impress';
  
 const App = () => {
   const [user, setUser] = useState();
@@ -76,6 +77,7 @@ const App = () => {
           <Route path="/login" element={<LogIn login={login} />} />
           <Route path="/dashboard" element={<Dashboard user={user} />} />
         </Routes>
+        <Impress />
       </div>
     </BrowserRouter>
   );
