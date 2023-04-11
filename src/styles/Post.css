@@ -53,6 +53,11 @@
   box-shadow: 5px 5px 10px -2px rgba(0, 0, 0, 0.4);
 }
 
+.PostText:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 7px -2px rgba(0, 0, 0, 0.5);
+}
+
 .PostText h2 {
   margin: 0;
 }

@@ -1,8 +1,10 @@
 import '../styles/DashboardPost.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const DashboardPost = ({ post }) => {
+  const navigate = useNavigate();
+
   const formatTime = (timestamp) => {
     const newTimestamp = new Date(timestamp);
     const time = `${newTimestamp.getHours()} : ${newTimestamp
@@ -39,25 +41,32 @@ const DashboardPost = ({ post }) => {
       )
       .then((res) => {
         if (res.data.error) {
-          console.log(res.data.error)
+          console.log(res.data.error);
         }
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="DashboardPost">
+    <div
+      className="DashboardPost"
+      onClick={() => navigate(`/post/${post._id}`)}
+    >
       <h4>{post.title}</h4>
       <div className="DashboardPostSub">
         <p>{formatTime(post.timestamp)}</p>
         <ul>
           {post.published ? (
             <li>
-              <Link className="activate" onClick={changePublish}>Unpublish</Link>
+              <Link className="activate" onClick={changePublish}>
+                Unpublish
+              </Link>
             </li>
           ) : (
             <li>
-              <Link className="deactivate" onClick={changePublish}>Publish</Link>
+              <Link className="deactivate" onClick={changePublish}>
+                Publish
+              </Link>
             </li>
           )}
           <li>
