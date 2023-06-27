@@ -1,5 +1,5 @@
 import { useCookies } from 'react-cookie';
-import { setAuthToken } from '../../../../odin-odin-book/social-network-frontend/src/methods/setAuthToken';
+import { setAuthToken } from '../methods/setAuthToken';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import '../styles/App.css';
