@@ -5,7 +5,7 @@ const Header = ({ user, logout }) => {
   const { pathname } = useLocation();
   return (
     <div className="Header">
-      <h1>STONEHAGEN</h1>
+      <h1>BLOG.STONEHAGEN</h1>
       <ul className="Menu">
         <li className={pathname.toLowerCase() === '/' ? 'active' : ''}>
           <Link to="/">Home</Link>
