@@ -41,4 +41,5 @@ button {
 
 p {
   font-weight: 200;
+  word-wrap: break-word;
 }
